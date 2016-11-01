@@ -1,0 +1,5 @@
+module SystemModule [system] {
+  header "/usr/include/SystemModule.h"
+  link "SystemModule"
+  export *
+}
