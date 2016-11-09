@@ -14,7 +14,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .Package(url: "https://github.com/IBM-Swift/SwiftyJSON.git", majorVersion: 13),
+//        .Package(url: "https://github.com/IBM-Swift/SwiftyJSON.git", majorVersion: 13),
         .Package(url: "../spm-internal-helper-package", majorVersion: 0)
     ]
 )
