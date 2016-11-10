@@ -1,0 +1,17 @@
+docker run -p 8181:8181 -v ~/Projects:/Projects -it --name ibm-swift ibmcom/swift-ubuntu /bin/bash
+
+
+
+
+
+
+/root/swift-3.0.1-RELEASE-ubuntu14.04/usr/bin/swift-build-tool -f /Projects/spm-internal-meetup/Circular/.build/debug.yaml -v
+/root/swift-3.0.1-RELEASE-ubuntu14.04/usr/bin/swiftc -module-name circulartool -incremental -emit-dependencies -emit-module -emit-module-path /Projects/spm-internal-meetup/Circular/.build/debug/circulartool.swiftmodule -output-file-map /Projects/spm-internal-meetup/Circular/.build/debug/circulartool.build/output-file-map.json -num-threads 8 -c /Projects/spm-internal-meetup/Circular/Sources/circulartool/File.swift /Projects/spm-internal-meetup/Circular/Sources/circulartool/main.swift -I /Projects/spm-internal-meetup/Circular/.build/debug -j8 -D SWIFT_PACKAGE -Onone -g -enable-testing -module-cache-path /Projects/spm-internal-meetup/Circular/.build/debug/ModuleCache
+/Projects/spm-internal-meetup/Circular/Sources/circulartool/main.swift:1:8: error: no such module 'CoreBluetooth'
+import CoreBluetooth
+       ^
+/Projects/spm-internal-meetup/Circular/Sources/circulartool/main.swift:1:8: error: no such module 'CoreBluetooth'
+import CoreBluetooth
+       ^
+<unknown>:0: error: build had 1 command failures
+error: exit(1): /root/swift-3.0.1-RELEASE-ubuntu14.04/usr/bin/swift-build-tool -f /Projects/spm-internal-meetup/Circular/.build/debug.yaml -v

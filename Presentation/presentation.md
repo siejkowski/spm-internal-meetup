@@ -50,6 +50,9 @@
 - brak wsparcia dla iOS, tvOS, watchOS
 
 ### wspierane tylko aplikacje terminalowe
+### bardzo ogranicza to użycie SPM w projektach
+
+^ Can be used on iOS/watchOS/tvOS, but not officially supported (not really? you can have a lib with Xcode project and include it in iOS project)
 
 ---
 
@@ -82,11 +85,10 @@
 
 # gdzie nie ma klienta
 
-- biblioteki
+- biblioteki (niezależne od systemowych)
 
-nie można wyspecyfikować zależności systemowych, tj. że musi być jakaś biblioteka obecna w systemie i czekająca na podlinkowanie; na macOS po prostu linkuje domyślnie sdk, na linuxie trzeba z palca podawać
-
-są niby providery, ale to tylko sugestia
+^ nie można wyspecyfikować zależności systemowych, tj. że musi być jakaś biblioteka obecna w systemie i czekająca na podlinkowanie; na macOS po prostu linkuje domyślnie sdk, na linuxie trzeba z palca podawać
+^ są providery, np. .Apt albo .Brew, ale to tylko sugestia
 
 ---
 
@@ -118,22 +120,53 @@ są niby providery, ale to tylko sugestia
 
 ---
 
-konwencja katalogów
-oparte o repozytorium gitowe (i tylko gitowe)
-rozproszeone
-plik Package.swift
+^ tutaj hand-on w konsolę i piszemy komendy
+
+# Package.swift
+
+^ odpowiednik Podfile / Cartfile
+
+^ oparte o repozytorium gitowe (i tylko gitowe)
+^ rozproszone, nie ma centralnego katalogu
+^ ściąga
+^ buduje to co ściągnął (ważne! bo można podmienić)
+
+
+
+---
+
+# `swift test`
 
 ---
 
 # *Jak z tego skorzystać?*
 
+^ jeśli bez modyfikatorów, to debug
+^ jeśli z `-c release`, to relase
+^ nie cleanuje z domysłu (komenda --clean=dist i --clean=build)
+
+^ moduły
+^ konwencja katalogów
+
 ---
 
 # *Jak to wspierać?*
 
+^ struktura katalogów
+^ plik Package.swift dla dewelopera
+
 ---
 
 # *Co z Cocoapods / Carthage?*
+
+
+^ Czy można wskazać repo z Cocoapods i SPM to ściągnie? Jest jakaś integracja między nimi? -> Nie, ale to dobry pomysł na open source
+
+
+
+
+
+
 
 
 fajne przykłady:
